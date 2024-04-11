@@ -1,14 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-theme="light" lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart ticketing</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
+<body class="raleway-font space-y-5">
+    <nav class="container mx-auto">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Home</a></li>
+                        <li>
+                            <a>About</a>
+                        </li>
+                        <li>
+                            <a>Destination</a>
+                        </li>
+                        <li>
+                            <a>Search</a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="text-4xl font-extrabold">P-Ticket</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-lg font-medium">
+                    <li>
+                        <a>Home</a>
+                    </li>
+                    <li>
+                        <a>About</a>
+                    </li>
+                    <li>
+                        <a>Destination</a>
+                    </li>
+                    <li>
+                        <a>Search</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn text-[#1DD100] font-bold text-lg border-[#1DD10066] bg-[#1DD1001A]">Bus <img
+                        src="images/bus-icon.png" alt=""></a>
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto">
+        <!-- banner -->
+        <section class="">
+            <div class="relative flex justify-center space-y-20">
+                <img class="w-screen" src="images/banner.png" alt="Bus">
+                <div class="absolute text-center space-y-5">
+                    <h1 class="font-extrabold text-7xl text-white">End-to-End Travel with <br> <span
+                            class="text-[#1DD100]">P
+                            Paribahan</span></h1>
+                    <p class="text-white text-sm">Yes, you can run unit tests and view the results directly within
+                        the app.
+                        <br>
+                        The integrated
+                        testing
+                        features allow for a streamlined .
+                    </p>
+                    <button class="btn text-[#030712] bg-[#1DD100] border-none font-bold text-sm">Buy
+                        Tickets</button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
