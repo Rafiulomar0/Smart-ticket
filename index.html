@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="raleway-font space-y-5">
+<body class="raleway-font space-y-5 h-screen">
     <nav class="container mx-auto">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -61,7 +61,7 @@
             </div>
         </div>
     </nav>
-    <main>
+    <main class="">
         <!-- banner -->
         <section class="container mx-auto">
             <div class="relative flex justify-center space-y-20">
@@ -306,7 +306,7 @@
                             <input type="text" class="grow" placeholder="Enter your email id" />
                         </label>
                     </div>
-                    <button class="btn bg-lime-500 mt-5 w-full text-white font-bold">Next</button>
+                    <button class="btn bg-lime-500 mt-5 w-full text-white font-bold btn-disabled">Next</button>
                 </div>
                 <div class="mt-6 flex gap-5 justify-center">
                     <span class="underline text-gray-500 font-medium">Terms and Conditions</span>
@@ -315,6 +315,18 @@
             </div>
         </section>
     </main>
+
+    <section class="flex justify-center items-center bg-slate-100 container mx-auto hidden">
+        <div class="flex flex-col items-center gap-5">
+            <img src="images/success.png" alt="">
+            <h2 class="text-lime-500 font-bold">SUCCESS</h2>
+            <p class="text-center">Thank you for Booking Our Bus Seats.
+                We are working hard to find the best service and deals for you.
+                <br> <small class="text-base"> Shortly you will find a confirmation in your email.</small>
+            </p>
+            <button class="btn bg-lime-500 rounded-full px-56">Continue</button>
+        </div>
+    </section>
 </body>
 
 </html>
