@@ -7,6 +7,7 @@
     <title>Smart ticketing</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/57d7f03dcd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -85,8 +86,8 @@
         <!-- offer -->
         <section class="mt-20 container mx-auto">
             <h1 class="text-center font-bold text-4xl">Best offers for you</h1>
-            <div class="flex justify-center mt-5">
-                <div class="w-1/4 flex">
+            <div class="flex justify-center mt-5 gap-2">
+                <div class="flex">
                     <div class="bg-[#FFBF0F] flex justify-between h-32 rounded-xl">
                         <div class="flex justify-center items-center">
                             <div class="ps-4">
@@ -96,7 +97,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class=" flex justify-center items-center border ms-6 ps-6">
+                        <div class=" flex justify-center items-center ms-5 ps-4">
                             <div class="pe-4">
                                 <h2 class="text-3xl">NEW15</h2>
                                 <p>Coupon Code</p>
@@ -105,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="w-1/4 flex">
+                <div class="flex">
                     <div class="bg-[#F78C9C] flex justify-between h-32 rounded-xl">
                         <div class="flex justify-center items-center">
                             <div class="ps-4">
@@ -115,7 +116,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="flex justify-center items-center border ms-5 ps-4">
+                        <div class="flex justify-center items-center ms-5 ps-4">
                             <div class="pe-4">
                                 <h2 class="text-3xl">Couple 20</h2>
                                 <p>Coupon Code</p>
@@ -140,11 +141,14 @@
             <div class="container flex justify-between mx-auto mt-20 gap-20 bg-white p-12 rounded-2xl">
                 <div class="flex-1">
                     <div class="flex justify-between">
-                        <div>
-                            <h1 class="font-bold text-3xl">Greenline Paribahan</h1>
-                            <p>Coach-009-WEB ! AC_Business</p>
+                        <div class="flex gap-3">
+                            <img class="inline" src="images/bus-logo.png" alt="">
+                            <div>
+                                <h1 class="font-bold text-3xl">Greenline Paribahan</h1>
+                                <p>Coach-009-WEB ! AC_Business</p>
+                            </div>
                         </div>
-                        <button class="btn bg-lime-200">40 Seats left</button>
+                        <button class="btn bg-lime-200"><img src="images/seat-green.png" alt=""> 40 Seats left</button>
                     </div>
                     <div class="mt-5 space-y-5 bg-[#F7F8F8] p-10 rounded-2xl">
                         <div class="flex">
@@ -166,9 +170,86 @@
                 </div>
                 <div class="divider divider-success divider-horizontal"></div>
                 <div class="flex-none w-52 ps-10 flex flex-col justify-center items-center">
+                    <img src="images/fare.png" alt="">
                     <h3 class="font-bold text-3xl">550 Taka</h3>
-                    <p>Per Seat</p>
+                    <p class="text-xl font-medium text-gray-500">Per Seat</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto flex gap-10">
+            <div class="flex-1">
+                <h1 class="font-bold text-xl">Select Your Seat</h1>
+                <div class="divider"></div>
+                <div class="flex justify-between">
+                    <span class="flex justify-center items-center gap-2"><img src="images/seat-gray.png" alt="">
+                        Available</span>
+                    <span class="text-lime-500 flex justify-center items-center gap-2"><img
+                            src="images/seat-green-filled.png" alt=""> Selected</span>
+                </div>
+                <div class="divider"></div>
+                <div class="flex justify-end">
+                    <button class="btn"><i class="fa-solid fa-dharmachakra"></i></button>
+                </div>
+                <div class="grid grid-cols-2 gap-10 mt-5">
+                    <div class="grid grid-cols-3 gap-5">
+                        <span>A</span>
+                        <span class="btn">A1</span>
+                        <span class="btn">A2</span>
+                        <span>B</span>
+                        <span class="btn">B1</span>
+                        <span class="btn">B2</span>
+                        <span>C</span>
+                        <span class="btn">C1</span>
+                        <span class="btn">C2</span>
+                        <span>D</span>
+                        <span class="btn">D1</span>
+                        <span class="btn">D2</span>
+                        <span>E</span>
+                        <span class="btn">E1</span>
+                        <span class="btn">E2</span>
+                        <span>F</span>
+                        <span class="btn">F1</span>
+                        <span class="btn">F2</span>
+                        <span>G</span>
+                        <span class="btn">G1</span>
+                        <span class="btn">G2</span>
+                        <span>H</span>
+                        <span class="btn">H1</span>
+                        <span class="btn">H2</span>
+                        <span>I</span>
+                        <span class="btn">I1</span>
+                        <span class="btn">I2</span>
+                        <span>J</span>
+                        <span class="btn">J1</span>
+                        <span class="btn">J2</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <span class="btn">A3</span>
+                        <span class="btn">A4</span>
+                        <span class="btn">B3</span>
+                        <span class="btn">B4</span>
+                        <span class="btn">C3</span>
+                        <span class="btn">C4</span>
+                        <span class="btn">D3</span>
+                        <span class="btn">D4</span>
+                        <span class="btn">E3</span>
+                        <span class="btn">E4</span>
+                        <span class="btn">F3</span>
+                        <span class="btn">F4</span>
+                        <span class="btn">G3</span>
+                        <span class="btn">G4</span>
+                        <span class="btn">H3</span>
+                        <span class="btn">H4</span>
+                        <span class="btn">I3</span>
+                        <span class="btn">I4</span>
+                        <span class="btn">J3</span>
+                        <span class="btn">J4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1">
+                <h1 class="font-bold text-xl">Select Your Seat</h1>
             </div>
         </section>
     </main>
