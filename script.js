@@ -20,6 +20,8 @@ function getClicked(seatId) {
                 if (!document.getElementById(seatId).classList.contains("bg-lime-400")) {
                     document.getElementById(seatId).classList.add("bg-lime-400");
                     updateSeatCountDom();
+                    appendTicket(seatId);
+                    calculateTotal();
                 }
             }
         }
@@ -29,6 +31,8 @@ function getClicked(seatId) {
                     document.getElementById(seatId).classList.remove("bg-lime-400");
                     const index = seatSelected.indexOf(seatId);
                     seatSelected.splice(index, 1);
+                    removeTicket(seatId);
+                    calculateTotal();
                 }
             }
             updateSeatCountDom();
@@ -39,10 +43,45 @@ function getClicked(seatId) {
 }
 
 
+function appendTicket(seatId) {
+    const list = document.getElementById("checkout");
+    const div = document.createElement('div');
+    const att = document.createAttribute("class");
+    const attSeat = document.createAttribute("id");
+    const spanSeat = document.createElement("span");
+    const spanClass = document.createElement("span");
+    const spanPrice = document.createElement("span");
+
+    att.value = "flex justify-between";
+    div.setAttributeNode(att);
+
+    attSeat.value = seatId + "-seat";
+    div.setAttributeNode(attSeat);
+
+    spanSeat.innerText = "" + seatId;
+    spanClass.innerText = "Economoy";
+    spanPrice.innerText = "550";
+
+    div.appendChild(spanSeat);
+    div.appendChild(spanClass);
+    div.appendChild(spanPrice);
+    list.appendChild(div);
+    div.classList.add("flex");
+    console.log(list);
+}
+
+function removeTicket(seatId) {
+    document.getElementById(seatId + "-seat").remove();
+}
+
+function calculateTotal() {
+    const total = 550 * seatSelected.length;
+    document.getElementById("total-price").innerText = total;
+}
+
 for (let i = 0; i < seatList.length; i++) {
     getClicked(seatList[i]);
 }
-
 
 
 function updateSeatCountDom() {
