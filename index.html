@@ -61,7 +61,7 @@
             </div>
         </div>
     </nav>
-    <main class="">
+    <main id="main-page">
         <!-- banner -->
         <section class="container mx-auto">
             <div class="relative flex justify-center space-y-20">
@@ -149,7 +149,9 @@
                                 <p>Coach-009-WEB ! AC_Business</p>
                             </div>
                         </div>
-                        <button class="btn bg-lime-200"><img src="images/seat-green.png" alt=""> 40 Seats left</button>
+                        <button class="btn bg-lime-200"><img src="images/seat-green.png" alt=""> <small
+                                id="totalSeat-number" class="text-lg">0</small>Seats
+                            left</button>
                     </div>
                     <div class="mt-5 space-y-5 bg-[#F7F8F8] p-10 rounded-2xl">
                         <div class="flex">
@@ -269,9 +271,9 @@
                     </div>
                     <div class="flex gap-5">
                         <label class="input input-bordered flex items-center gap-2 flex-1">
-                            <input type="text" class="grow" placeholder="Search" />
+                            <input id="coupon-input" type="text" class="grow" placeholder="Search" disabled />
                         </label>
-                        <span class="btn bg-lime-400">Apply</span>
+                        <span class="btn bg-lime-400 btn-disabled" id="apply-coupon">Apply</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="font-bold">Grand Total</span>
@@ -289,7 +291,8 @@
                     <div class="space-y-2 mt-2">
                         <h2 class="font-bold">Phone Number*</h2>
                         <label class="input input-bordered flex items-center">
-                            <input type="text" class="grow" placeholder="Enter your phone number" />
+                            <input type="number" id="phone-number" class="grow" placeholder="Enter your phone number"
+                                required />
                         </label>
                     </div>
                     <div class="space-y-2 mt-2">
@@ -298,7 +301,8 @@
                             <input type="text" class="grow" placeholder="Enter your email id" />
                         </label>
                     </div>
-                    <button class="btn bg-lime-500 mt-5 w-full text-white font-bold btn-disabled">Next</button>
+                    <button id="next-btn"
+                        class="btn bg-lime-500 mt-5 w-full text-white font-bold btn-disabled">Next</button>
                 </div>
                 <div class="mt-6 flex gap-5 justify-center">
                     <span class="underline text-gray-500 font-medium">Terms and Conditions</span>
@@ -308,7 +312,7 @@
         </section>
     </main>
 
-    <section class="flex justify-center items-center bg-slate-100 container mx-auto hidden">
+    <section id="checkout-page" class="flex justify-center items-center bg-slate-100 container mx-auto hidden">
         <div class="flex flex-col items-center gap-5">
             <img src="images/success.png" alt="">
             <h2 class="text-lime-500 font-bold">SUCCESS</h2>

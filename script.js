@@ -10,10 +10,18 @@ const seatList = ['A1', 'A2', 'A3', 'A4',
     'J1', 'J2', 'J3', 'J4'];
 
 const seatSelected = [];
+let totalSeat = 40;
+let setValidCopun = false;
+
+document.getElementById("totalSeat-number").innerText = totalSeat;
+
+function updateSeatNumber(totalSeat) {
+    document.getElementById("totalSeat-number").innerText = totalSeat;
+}
 
 function getClicked(seatId) {
     document.getElementById(seatId).addEventListener("click", function () {
-        if (seatSelected.length < 3 && !seatSelected.includes(seatId)) {
+        if (seatSelected.length < 4 && !seatSelected.includes(seatId)) {
             seatSelected.push(seatId);
             console.log(seatSelected);
             for (let i = 0; i < seatSelected.length; i++) {
@@ -22,6 +30,9 @@ function getClicked(seatId) {
                     updateSeatCountDom();
                     appendTicket(seatId);
                     calculateTotal();
+                    totalSeat--;
+                    updateSeatNumber(totalSeat);
+                    couponUnlockerField();
                 }
             }
         }
@@ -33,12 +44,16 @@ function getClicked(seatId) {
                     seatSelected.splice(index, 1);
                     removeTicket(seatId);
                     calculateTotal();
+                    totalSeat++;
+                    updateSeatNumber(totalSeat);
                 }
             }
             updateSeatCountDom();
+            document.getElementById("grand-price").innerText = seatSelected.length * 550;
+            setValidCopun = false;
             console.log(seatSelected);
         }
-
+        couponUnlockerField();
     });
 }
 
@@ -77,6 +92,29 @@ function removeTicket(seatId) {
 function calculateTotal() {
     const total = 550 * seatSelected.length;
     document.getElementById("total-price").innerText = total;
+
+    if (!setValidCopun) document.getElementById("grand-price").innerText = total;
+}
+
+
+document.getElementById("apply-coupon").addEventListener("click", function () {
+    const code = document.getElementById("coupon-input").value;
+    if (!checkValidCoupn(code)) {
+        alert("Coupn code not valid");
+    }
+    else {
+        if (!setValidCopun) {
+            const totalPrice = seatSelected.length * 550;
+            const discountPrice = (code === "NEW15") ? totalPrice - (totalPrice * 0.15) : totalPrice - (totalPrice * 0.20);
+            document.getElementById("grand-price").innerText = discountPrice;
+            setValidCopun = true;
+        }
+    }
+});
+
+
+function checkValidCoupn(couponCode) {
+    return couponCode === "NEW15" || couponCode === "Couple 20";
 }
 
 for (let i = 0; i < seatList.length; i++) {
@@ -84,6 +122,41 @@ for (let i = 0; i < seatList.length; i++) {
 }
 
 
+function couponUnlockerField() {
+    if (seatSelected.length >= 4) {
+        document.getElementById("apply-coupon").classList.remove("btn-disabled");
+        document.getElementById("coupon-input").removeAttribute("disabled");
+    }
+    else {
+        if (!document.getElementById("apply-coupon").classList.contains("btn-disabled")) {
+            document.getElementById("apply-coupon").classList.add("btn-disabled");
+            document.getElementById("coupon-input").disabled = true;
+        }
+    }
+}
+
 function updateSeatCountDom() {
     document.getElementById("seatCount").innerText = seatSelected.length;
 }
+
+
+setInterval(function () {
+    checkValidInfo();
+});
+
+function checkValidInfo() {
+    const phoneNumber = document.getElementById("phone-number").value;
+    if (seatSelected.length >= 1 && phoneNumber.length >= 1) {
+        document.getElementById("next-btn").classList.remove("btn-disabled");
+    }
+    else {
+        if (!document.getElementById("next-btn").classList.contains("btn-disabled")) {
+            document.getElementById("next-btn").classList.add("btn-disabled");
+        }
+    }
+}
+
+document.getElementById("next-btn").addEventListener("click", function () {
+    document.getElementById("checkout-page").classList.remove("hidden");
+    document.getElementById("main-page").classList.add("hidden");
+});
