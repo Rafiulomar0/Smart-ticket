@@ -142,7 +142,7 @@ function updateSeatCountDom() {
 
 setInterval(function () {
     checkValidInfo();
-});
+}, 1000);
 
 function checkValidInfo() {
     const phoneNumber = document.getElementById("phone-number").value;
