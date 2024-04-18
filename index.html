@@ -77,8 +77,9 @@
                         testing
                         features allow for a streamlined .
                     </p>
-                    <button class="btn text-[#030712] bg-[#1DD100] border-none font-bold text-sm">Buy
-                        Tickets</button>
+                    <button class="btn text-[#030712] bg-[#1DD100] border-none font-bold text-sm"><a href="#ticket">
+                            Buy
+                            Tickets</a></button>
                 </div>
             </div>
         </section>
@@ -177,7 +178,7 @@
             </div>
         </section>
 
-        <section class="container mx-auto flex gap-10">
+        <section class="container mx-auto flex gap-10" id="ticket">
             <div class="flex-1">
                 <h1 class="font-bold text-xl">Select Your Seat</h1>
                 <div class="divider"></div>
@@ -194,57 +195,57 @@
                 <div class="grid grid-cols-2 gap-10 mt-5">
                     <div class="grid grid-cols-3 gap-5">
                         <span>A</span>
-                        <span class="btn">A1</span>
-                        <span class="btn">A2</span>
+                        <span id="A1" class="btn">A1</span>
+                        <span id="A2" class="btn">A2</span>
                         <span>B</span>
-                        <span class="btn">B1</span>
-                        <span class="btn">B2</span>
+                        <span id="B1" class="btn">B1</span>
+                        <span id="B2" class="btn">B2</span>
                         <span>C</span>
-                        <span class="btn">C1</span>
-                        <span class="btn">C2</span>
+                        <span id="C1" class="btn">C1</span>
+                        <span id="C2" class="btn">C2</span>
                         <span>D</span>
-                        <span class="btn">D1</span>
-                        <span class="btn">D2</span>
+                        <span id="D1" class="btn">D1</span>
+                        <span id="D2" class="btn">D2</span>
                         <span>E</span>
-                        <span class="btn">E1</span>
-                        <span class="btn">E2</span>
+                        <span id="E1" class="btn">E1</span>
+                        <span id="E2" class="btn">E2</span>
                         <span>F</span>
-                        <span class="btn">F1</span>
-                        <span class="btn">F2</span>
+                        <span id="F1" class="btn">F1</span>
+                        <span id="F2" class="btn">F2</span>
                         <span>G</span>
-                        <span class="btn">G1</span>
-                        <span class="btn">G2</span>
+                        <span id="G1" class="btn">G1</span>
+                        <span id="G2" class="btn">G2</span>
                         <span>H</span>
-                        <span class="btn">H1</span>
-                        <span class="btn">H2</span>
+                        <span id="H1" class="btn">H1</span>
+                        <span id="H2" class="btn">H2</span>
                         <span>I</span>
-                        <span class="btn">I1</span>
-                        <span class="btn">I2</span>
+                        <span id="I1" class="btn">I1</span>
+                        <span id="I2" class="btn">I2</span>
                         <span>J</span>
-                        <span class="btn">J1</span>
-                        <span class="btn">J2</span>
+                        <span id="J2" class="btn">J2</span>
+                        <span id="J1" class="btn">J1</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <span class="btn">A3</span>
-                        <span class="btn">A4</span>
-                        <span class="btn">B3</span>
-                        <span class="btn">B4</span>
-                        <span class="btn">C3</span>
-                        <span class="btn">C4</span>
-                        <span class="btn">D3</span>
-                        <span class="btn">D4</span>
-                        <span class="btn">E3</span>
-                        <span class="btn">E4</span>
-                        <span class="btn">F3</span>
-                        <span class="btn">F4</span>
-                        <span class="btn">G3</span>
-                        <span class="btn">G4</span>
-                        <span class="btn">H3</span>
-                        <span class="btn">H4</span>
-                        <span class="btn">I3</span>
-                        <span class="btn">I4</span>
-                        <span class="btn">J3</span>
-                        <span class="btn">J4</span>
+                        <span id="A3" class="btn">A3</span>
+                        <span id="A4" class="btn">A4</span>
+                        <span id="B3" class="btn">B3</span>
+                        <span id="B4" class="btn">B4</span>
+                        <span id="C3" class="btn">C3</span>
+                        <span id="C4" class="btn">C4</span>
+                        <span id="D3" class="btn">D3</span>
+                        <span id="D4" class="btn">D4</span>
+                        <span id="E3" class="btn">E3</span>
+                        <span id="E4" class="btn">E4</span>
+                        <span id="F3" class="btn">F3</span>
+                        <span id="F4" class="btn">F4</span>
+                        <span id="G3" class="btn">G3</span>
+                        <span id="G4" class="btn">G4</span>
+                        <span id="H3" class="btn">H3</span>
+                        <span id="H4" class="btn">H4</span>
+                        <span id="I3" class="btn">I3</span>
+                        <span id="I4" class="btn">I4</span>
+                        <span id="J3" class="btn">J3</span>
+                        <span id="J4" class="btn">J4</span>
                     </div>
                 </div>
             </div>
@@ -254,7 +255,8 @@
                 <div class="divider"></div>
                 <div class="bg-[#0307120D] rounded-2xl p-5 space-y-5">
                     <div class="flex justify-between">
-                        <span class="font-bold">Seat <small class="bg-lime-500">2</small></span>
+                        <span class="font-bold">Seat <small id="seatCount"
+                                class="bg-lime-500 px-2 rounded-xl text-white">0</small></span>
                         <span class="font-bold">Class</span>
                         <span class="font-bold">Price</span>
                     </div>
@@ -328,6 +330,7 @@
             <button class="btn bg-lime-500 rounded-full px-56">Continue</button>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
